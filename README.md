@@ -1,4 +1,4 @@
-# PL/SQL Formatter for TIETO Germany 
+# PL/SQL Formatter
 
 This formatter helps you to generate nicely looking code! 
 
