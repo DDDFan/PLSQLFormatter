@@ -72,7 +72,7 @@ function checkStart(line: string, tabObj: tabWhen): tabWhen {
    var doubleSpace = "  ";
    var trippleSpace = "   ";
    // if (!checkKeyWordValid(line, "--")) {
-   if (checkKeyWordValid(line, "begin") || (checkKeyWordValid(line, "\\(") && !checkKeyWordValid(line, "record") && !checkKeyWordValid(line, "then") && !checkKeyWordValid(line, "[a-zA-Z]*\\(") && !checkKeyWordValid(line, "\\.") && !tabObj.procFlag)) {
+   if (checkKeyWordValid(line, "begin") || (checkKeyWordValid(line, "\\(") && !checkKeyWordValid(line, "record") && !checkKeyWordValid(line, "then") && !checkKeyWordValid(line, "[a-zA-Z]*\\(") && !checkKeyWordValid(line, "\\.") && !checkKeyWordValid(line, "\\,") && !tabObj.procFlag)) {
       tabObj.tabSize = tabObj.tabSize + doubleSpace;
    }
    if (checkKeyWordValid(line, "type") && checkKeyWordValid(line, "record")) {
@@ -90,7 +90,7 @@ function checkStart(line: string, tabObj: tabWhen): tabWhen {
 function checkSelect(line: string, tabObj: tabWhen): tabWhen {
    var doubleSpace = "  ";
    // if (!checkKeyWordValid(line, "--")) {
-   if (checkKeyWordValid(line, "select")) {
+   if (checkKeyWordValid(line, "select") || checkKeyWordValid(line, "delete")) {
       tabObj.tabSize = tabObj.tabSize + doubleSpace;
    }
    if (checkKeyWordValid(line, "from")) {
@@ -169,7 +169,7 @@ function checkKeyWordValid(line: string, keyword: string): boolean {
    if (comment > 0) {
       tempLine = tempLine.substr(0, comment);
    }
-
+   
    return new RegExp(matchWord).exec(tempLine.toLowerCase()) !== null;
 }
 

@@ -1,7 +1,7 @@
 {
     "name": "formatter-plsql",
-    "displayName": "Format plsql Tieto-Style",
-    "description": "This formatter works on a selection of pl/sql code and formats it by following criteria:",
+    "displayName": "Format plsql",
+    "description": "A formatter for plsql/sql files. Covers procedures, packages and more!",
     "version": "0.9.2",
     "publisher": "BigB",
     "engines": {
